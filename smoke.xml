@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+
+<suite name="Smoke Suite">
+    <test name="Smoke test">
+
+        <groups>
+            <run>
+                <include name="smoke"/>
+            </run>
+        </groups>
+
+        <packages>
+            <package name="class_1"></package>
+            <package name="class_2"></package>
+            <package name="class_3"></package>
+        </packages>
+    </test>
+
+</suite>

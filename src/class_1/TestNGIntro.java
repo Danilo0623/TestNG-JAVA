@@ -3,18 +3,19 @@ package class_1;
 import org.testng.annotations.Test;
 
 public class TestNGIntro {
-    @Test
-    public void setup(){
-        System.out.println("Opening Browser");
+    @Test(groups = "smoke")
+    public void hello(){
+        System.out.println("Hello");
     }
 
-    @Test
-    void login(){
-        System.out.println("this is login test");
+    @Test(groups = "smoke")
+    public void sayBye(){
+        System.out.println("Bye");
     }
 
-    @Test
-    void teardown(){
-        System.out.println("closing browser");
+    @Test(groups = "smoke")
+    public void anotherMethod(){
+        System.out.println("How are you today?");
     }
+
 }

@@ -31,7 +31,7 @@ public class Test_1 {
 //        }
         Assert.assertTrue(logo.isDisplayed(),"its not displayed");
     }
-    @Test(priority = 1) //enabled = false
+    @Test(priority = 1,groups = "smoke") //enabled = false
     public void invalidCredentials() {
         driver.findElement(By.id("txtUsername")).sendKeys("Admin1");
         driver.findElement(By.id("txtPassword")).sendKeys("Hum@nhrm1234");

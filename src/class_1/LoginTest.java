@@ -13,46 +13,43 @@ import java.util.concurrent.TimeUnit;
 public class LoginTest {
 
     WebDriver driver;
-    @BeforeMethod
+
+    @BeforeMethod(alwaysRun = true)
     public void openAndNavigate(){
         System.setProperty("webdriver.chrome.driver","/Users/punchcode/eclipse-workspace/TestNGProject/drivers/chromedriver");
-        driver =new ChromeDriver();
+        driver=new ChromeDriver();
         driver.get("http://hrmstest.syntaxtechs.net/humanresources/symfony/web/index.php/auth/login");
-        driver.manage().window().maximize();
+        //driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
     }
 
-    @Test
+    @Test (groups = "smoke")
     public void validAdminLogin(){
         driver.findElement(By.id("txtUsername")).sendKeys("Admin");
         driver.findElement(By.id("txtPassword")).sendKeys("Hum@nhrm123");
-
         driver.findElement(By.id("btnLogin")).click();
-
         WebElement welcomeMessage = driver.findElement(By.cssSelector("a#welcome"));
 
-        if (welcomeMessage.isDisplayed()){
-            System.out.println("Test pass. The message is displayed");
-        }
-
-    }
-
-    @Test
-    public void titleValidation(){
-        String expectedTitle="Human Management System";
-        String actualTitle=driver.getTitle();
-
-        if(expectedTitle.equals(actualTitle)){
+        if(welcomeMessage.isDisplayed()){
             System.out.println("Test Pass");
-        }else{
+        }else {
             System.out.println("Test Fail");
         }
     }
 
-    @AfterMethod
+    @Test(groups = "regression")
+    public void titleValidation(){
+        String expectedTitle="Human Management System";
+        String actualTitle=driver.getTitle();
+        if(expectedTitle.equals(actualTitle)){
+            System.out.println("Title is valid. Test Pass");
+        }else {
+            System.out.println("Title is not matched. Test Failed");
+        }
+    }
+
+    @AfterMethod(alwaysRun = true)
     public void closeBrowser(){
         driver.quit();
     }
-
-
 }

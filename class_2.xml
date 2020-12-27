@@ -1,21 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite name="All Test Suite">
-    <test verbose="2" preserve-order="true"
-          name="this is just any name">
-
+    <test verbose="2" preserve-order="true" name="/Users/punchcode/eclipse-workspace/TestNGProject/src/class_2/HW.java">
         <classes>
-            <class name="class_2.Test_1">
+            <class name="class_2.HW">
                 <methods>
                     <include name="logoValidation"/>
                     <include name="invalidCredentials"/>
                 </methods>
-            </class>
-            <class name="class_1.Task_1">
-
-            </class>
-            <class name="class_1.Task_2">
-
             </class>
         </classes>
     </test>
