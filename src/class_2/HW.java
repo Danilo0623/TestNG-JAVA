@@ -15,15 +15,16 @@ public class HW {
     WebDriver driver;
 
     @BeforeMethod(alwaysRun = true)
-    public void openAndNavigate() {
-        System.setProperty("webdriver.chrome.driver","/Users/punchcode/eclipse-workspace/TestNGProject/drivers/chromedriver");
+    public void openAndNavigate() throws InterruptedException {
+        System.setProperty("webdriver.chrome.driver", "/Users/punchcode/eclipse-workspace/TestNGProject/drivers/chromedriver");
         driver = new ChromeDriver();
         driver.navigate().to("http://hrmstest.syntaxtechs.net/humanresources/symfony/web/index.php/auth/login");
         //driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+        Thread.sleep(5000);
     }
 
-    @Test(priority = 0, enabled = true, groups = "regression")
+    //@Test(priority = 0, enabled = true, groups = "regression")
     public void logoValidation() {
         WebElement logo = driver.findElement(By.cssSelector("img[src$='syntax.png']"));
 //        if(logo.isDisplayed()) {

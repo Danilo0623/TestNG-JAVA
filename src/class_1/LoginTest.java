@@ -15,12 +15,13 @@ public class LoginTest {
     WebDriver driver;
 
     @BeforeMethod(alwaysRun = true)
-    public void openAndNavigate(){
-        System.setProperty("webdriver.chrome.driver","/Users/punchcode/eclipse-workspace/TestNGProject/drivers/chromedriver");
+    public void openAndNavigate() throws InterruptedException {
+        System.setProperty("webdriver.chrome.driver", "/Users/punchcode/eclipse-workspace/TestNGProject/drivers/chromedriver");
         driver=new ChromeDriver();
         driver.get("http://hrmstest.syntaxtechs.net/humanresources/symfony/web/index.php/auth/login");
         //driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
+        Thread.sleep(5000);
     }
 
     @Test (groups = "smoke")
@@ -37,7 +38,8 @@ public class LoginTest {
         }
     }
 
-    @Test(groups = "regression")
+
+    //@Test(groups = "regression")
     public void titleValidation(){
         String expectedTitle="Human Management System";
         String actualTitle=driver.getTitle();

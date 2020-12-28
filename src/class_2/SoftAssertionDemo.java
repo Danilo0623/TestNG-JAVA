@@ -19,12 +19,13 @@ public class SoftAssertionDemo {
     WebDriver driver;
 
     @BeforeMethod(alwaysRun = true)
-    public void openAndNavigate() {
+    public void openAndNavigate() throws InterruptedException {
         System.setProperty("webdriver.chrome.driver","/Users/punchcode/eclipse-workspace/TestNGProject/drivers/chromedriver");
         driver = new ChromeDriver();
         driver.navigate().to("http://hrmstest.syntaxtechs.net/humanresources/symfony/web/index.php/auth/login");
         //driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+        Thread.sleep(5000);
     }
 
     @AfterMethod(alwaysRun = true)
