@@ -10,7 +10,7 @@ import org.testng.asserts.SoftAssert;
 import java.util.concurrent.TimeUnit;
 
 public class SoftAssertionModified {
-    //As and admin I should be able to login into HRMS
+//As and admin I should be able to login into HRMS
     //logo is displayed
     //user is successfully logged in
 
@@ -87,3 +87,6 @@ public class SoftAssertionModified {
         System.out.println("Hello from simple test");
     }
 }
+
+//identifies all test caes to the specific group, create a regresion xml and execute all test from smoke and then regression
+

@@ -16,7 +16,7 @@ public class HW {
 
     @BeforeMethod(alwaysRun = true)
     public void openAndNavigate() throws InterruptedException {
-        System.setProperty("webdriver.chrome.driver", "/Users/punchcode/eclipse-workspace/TestNGProject/drivers/chromedriver");
+        System.setProperty("webdriver.chrome.driver","/Users/punchcode/eclipse-workspace/TestNGProject/drivers/chromedriver");
         driver = new ChromeDriver();
         driver.navigate().to("http://hrmstest.syntaxtechs.net/humanresources/symfony/web/index.php/auth/login");
         //driver.manage().window().maximize();

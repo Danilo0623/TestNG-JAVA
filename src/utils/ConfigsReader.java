@@ -6,27 +6,36 @@ import java.io.IOException;
 import java.util.Properties;
 
 public class ConfigsReader {
-    public static void readProperties(String filePath){
+    static Properties prop;
 
-        /**
-         * This method reads any given property file
-         *         @param filePath
-         *          @return Properties
-         */
+    /**
+     * This method read any given property file
+     *
+     * @param filePath
+     * @return Properties
+     */
+    public static Properties readProperties(String filePath) {
+
         try {
-                FileInputStream inputStream = new FileInputStream(filePath);
-                Properties properties = new Properties();
-                properties.load(inputStream);
-                //browser = properties.get("browser").toString();
-//                url = properties.get("url").toString();
-//                username = properties.get("username").toString();
-//                password = properties.get("password").toString();
-//                inputStream.close();
-            } catch (FileNotFoundException exception) {
-                exception.printStackTrace();
-            }catch (IOException e){
+            FileInputStream fis = new FileInputStream(filePath);
+            prop = new Properties();
+            prop.load(fis);
+            fis.close();
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
             e.printStackTrace();
         }
+        return prop;
+    }
+
+    /**
+     * This method retrieves single value based on the specified key
+     * @param key
+     * @return
+     */
+    public static String getPropertyValue(String key){
+        return prop.getProperty(key);
     }
 
 }

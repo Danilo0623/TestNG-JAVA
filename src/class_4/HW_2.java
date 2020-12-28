@@ -28,7 +28,7 @@ import java.util.concurrent.TimeUnit;
     //Close the browser
     //Specify group for this test case, add it into specific suite and execute from xml file.
  */
-public class HW_1 {
+public class HW_2 {
     WebDriver driver;
     public String usernameAdmin = "Admin";
     public String passwordAdmin = "Hum@nhrm123";
@@ -76,33 +76,33 @@ public class HW_1 {
         WebElement saveButton = driver.findElement(By.cssSelector("input#btnSave"));
         saveButton.click();
         //validating that employee is added successfully
-        WebElement title = driver.findElement(By.xpath("//div[@id='content']/div/div/div/h1[1]"));
+        WebElement title = driver.findElement(By.xpath("//div[@id='profile-pic']//h1"));
         Assert.assertTrue(title.isDisplayed(), "Name is displayed");
     }
 
     @DataProvider
     public Object[][] AddEmployee() {
         Object[][] data = new Object[5][4];
-        data[0][0] = "Elias";
-        data[0][1] = "Alvial";
-        data[0][2] = "Eliasalv111";
-        data[0][3] = "Syntax@123";
-        data[1][0] = "Jacob";
-        data[1][1] = "Alvial";
-        data[1][2] = "Jacobalv11";
-        data[1][3] = "Syntax@123";
-        data[2][0] = "Valerie";
-        data[2][1] = "Alvial";
-        data[2][2] = "Valeriealv11";
-        data[2][3] = "Syntax@123";
-        data[3][0] = "Anibal";
-        data[3][1] = "Sanchez";
-        data[3][2] = "Anibalsan111";
-        data[3][3] = "Syntax@123";
-        data[4][0] = "Jazmin";
-        data[4][1] = "Vargas";
-        data[4][2] = "Jazminvar11";
-        data[4][3] = "Syntax@123";
+        data[0][0] = "Marko";
+        data[0][1] = "Markovic";
+        data[0][2] = "Marko123";
+        data[0][3] = "MarkoSyntax@123";
+        data[1][0] = "Nikola";
+        data[1][1] = "Nikolic";
+        data[1][2] = "Nikola123";
+        data[1][3] = "NikolaSyntax@123";
+        data[2][0] = "Danilo";
+        data[2][1] = "Nikolic";
+        data[2][2] = "Danilo123";
+        data[2][3] = "DaniloSyntax@123";
+        data[3][0] = "Petar";
+        data[3][1] = "Petrovic";
+        data[3][2] = "Petar123";
+        data[3][3] = "PetarSyntax@123";
+        data[4][0] = "Dusan";
+        data[4][1] = "Duskovic";
+        data[4][2] = "Dusan123";
+        data[4][3] = "DusanSyntax@123";
         return data;
     }
 }
